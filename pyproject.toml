@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ach-payment-exception-intelligence"
+version = "1.0.0"
+description = "Synthetic ACH validation, cited exception analysis and auditable human review"
+requires-python = ">=3.12,<3.13"
+license = "Apache-2.0"
+dependencies = [
+ "fastapi==0.135.2", "uvicorn==0.42.0", "pydantic==2.12.5",
+ "pydantic-settings==2.13.1", "sqlalchemy==2.0.48", "alembic==1.18.4",
+ "psycopg[binary]==3.3.3", "httpx==0.28.1", "python-multipart==0.0.22",
+ "langchain-core==1.2.19",
+]
+
+[dependency-groups]
+dev = ["pytest==9.0.2", "pytest-cov==7.0.0", "ruff==0.15.6", "mypy==1.19.1"]
+
+[project.scripts]
+ach-demo = "ach_intelligence.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ach_intelligence"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src"]
+check_untyped_defs = true
+disallow_untyped_defs = true
+warn_unused_ignores = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = ["integration: requires live Moov HTTP service and optionally PostgreSQL"]

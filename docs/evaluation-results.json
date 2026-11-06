@@ -1,0 +1,256 @@
+{
+  "fixture_set": "synthetic-ach-v1",
+  "command": "uv run ach-demo evaluate",
+  "mode": "offline; Moov and optional Ollama measured separately in integration tests",
+  "validation": {
+    "correct": 37,
+    "total": 37,
+    "accuracy": 1.0
+  },
+  "return_lookup": {
+    "correct": 6,
+    "total": 6
+  },
+  "citations": {
+    "reports_with_valid_citations": 58,
+    "total_reports": 58
+  },
+  "retrieval": {
+    "relevant_section_present": 58,
+    "total_reports": 58
+  },
+  "claims": {
+    "supported": 143,
+    "total": 143,
+    "unsupported_rate": 0.0
+  },
+  "limitations": [
+    "Small authored fixture suite; no population-level quality claim.",
+    "Unsupported-claim metric checks fixed factual templates and evidence IDs; it is not a free-form LLM judge.",
+    "Recommendations are a fixed two-step analyst checklist; no payment recommendation is generated."
+  ],
+  "scenarios": [
+    {
+      "scenario": "valid_ppd_mixed",
+      "expected_status": "valid",
+      "observed_status": "valid",
+      "correct": true
+    },
+    {
+      "scenario": "valid_ccd",
+      "expected_status": "valid",
+      "observed_status": "valid",
+      "correct": true
+    },
+    {
+      "scenario": "valid_credit",
+      "expected_status": "valid",
+      "observed_status": "valid",
+      "correct": true
+    },
+    {
+      "scenario": "valid_debit",
+      "expected_status": "valid",
+      "observed_status": "valid",
+      "correct": true
+    },
+    {
+      "scenario": "valid_multiple_batches",
+      "expected_status": "valid",
+      "observed_status": "valid",
+      "correct": true
+    },
+    {
+      "scenario": "valid_crlf",
+      "expected_status": "valid",
+      "observed_status": "valid",
+      "correct": true
+    },
+    {
+      "scenario": "injected_receiver_text",
+      "expected_status": "valid",
+      "observed_status": "valid",
+      "correct": true
+    },
+    {
+      "scenario": "short_line",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "long_line",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_entry_routing",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_header_routing",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_batch_count",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_batch_hash",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_batch_credit",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_batch_debit",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_file_credit",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_file_debit",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_file_count",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_file_batches",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_file_hash",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_block_count",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "missing_account",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "missing_receiver",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "unsupported_sec",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "unsupported_addenda",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_trace",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_amount",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_date",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_batch_company",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_transaction_code",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "bad_header_size",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "missing_header",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "missing_control",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "service_class_conflict",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    },
+    {
+      "scenario": "duplicate_entry",
+      "expected_status": "needs_review",
+      "observed_status": "needs_review",
+      "correct": true
+    },
+    {
+      "scenario": "duplicate_trace",
+      "expected_status": "needs_review",
+      "observed_status": "needs_review",
+      "correct": true
+    },
+    {
+      "scenario": "empty",
+      "expected_status": "invalid",
+      "observed_status": "invalid",
+      "correct": true
+    }
+  ]
+}

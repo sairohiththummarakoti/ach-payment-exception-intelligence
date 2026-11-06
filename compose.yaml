@@ -1,0 +1,40 @@
+name: ach-exception-intelligence
+services:
+  db:
+    image: postgres:17.6-alpine
+    environment:
+      POSTGRES_USER: ach
+      POSTGRES_PASSWORD: synthetic-local-only
+      POSTGRES_DB: ach
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ach -d ach"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  moov:
+    image: moov/ach:v1.68.0
+    environment:
+      ACH_MAX_BODY_SIZE: 2MB
+    ports:
+      - "127.0.0.1:8081:8080"
+  api:
+    build: .
+    environment:
+      ACH_DATABASE_URL: postgresql+psycopg://ach:synthetic-local-only@db:5432/ach
+      ACH_MOOV_URL: http://moov:8080
+      ACH_LLM_PROVIDER: offline
+      ACH_API_TOKEN: ${ACH_API_TOKEN:-}
+    ports:
+      - "127.0.0.1:8001:8001"
+    depends_on:
+      db:
+        condition: service_healthy
+      moov:
+        condition: service_started
+    restart: unless-stopped
+volumes:
+  postgres-data:

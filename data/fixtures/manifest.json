@@ -1,0 +1,187 @@
+[
+  {
+    "name": "valid_ppd_mixed",
+    "expected_code": null,
+    "expected_status": "valid"
+  },
+  {
+    "name": "valid_ccd",
+    "expected_code": null,
+    "expected_status": "valid"
+  },
+  {
+    "name": "valid_credit",
+    "expected_code": null,
+    "expected_status": "valid"
+  },
+  {
+    "name": "valid_debit",
+    "expected_code": null,
+    "expected_status": "valid"
+  },
+  {
+    "name": "valid_multiple_batches",
+    "expected_code": null,
+    "expected_status": "valid"
+  },
+  {
+    "name": "valid_crlf",
+    "expected_code": null,
+    "expected_status": "valid"
+  },
+  {
+    "name": "injected_receiver_text",
+    "expected_code": null,
+    "expected_status": "valid"
+  },
+  {
+    "name": "short_line",
+    "expected_code": "RECORD_LENGTH",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "long_line",
+    "expected_code": "RECORD_LENGTH",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_entry_routing",
+    "expected_code": "ROUTING",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_header_routing",
+    "expected_code": "ROUTING",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_batch_count",
+    "expected_code": "BATCH_COUNT",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_batch_hash",
+    "expected_code": "BATCH_HASH",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_batch_credit",
+    "expected_code": "BATCH_CREDIT_TOTAL",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_batch_debit",
+    "expected_code": "BATCH_DEBIT_TOTAL",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_file_credit",
+    "expected_code": "FILE_CREDIT_TOTAL",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_file_debit",
+    "expected_code": "FILE_DEBIT_TOTAL",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_file_count",
+    "expected_code": "FILE_ENTRY_COUNT",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_file_batches",
+    "expected_code": "FILE_BATCH_COUNT",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_file_hash",
+    "expected_code": "FILE_HASH",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_block_count",
+    "expected_code": "BLOCK_COUNT",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "missing_account",
+    "expected_code": "REQUIRED_FIELD",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "missing_receiver",
+    "expected_code": "REQUIRED_FIELD",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "unsupported_sec",
+    "expected_code": "UNSUPPORTED_SEC",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "unsupported_addenda",
+    "expected_code": "UNSUPPORTED_ADDENDA",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_trace",
+    "expected_code": "TRACE",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_amount",
+    "expected_code": "NUMERIC_FIELD",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_date",
+    "expected_code": "INVALID_DATE",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_batch_company",
+    "expected_code": "BATCH_METADATA",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_transaction_code",
+    "expected_code": "TRANSACTION_CODE",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "bad_header_size",
+    "expected_code": "FILE_HEADER",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "missing_header",
+    "expected_code": "MISSING_HEADER",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "missing_control",
+    "expected_code": "MISSING_CONTROL",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "service_class_conflict",
+    "expected_code": "SERVICE_CLASS",
+    "expected_status": "invalid"
+  },
+  {
+    "name": "duplicate_entry",
+    "expected_code": "DUPLICATE_ENTRY",
+    "expected_status": "needs_review"
+  },
+  {
+    "name": "duplicate_trace",
+    "expected_code": "DUPLICATE_TRACE",
+    "expected_status": "needs_review"
+  },
+  {
+    "name": "empty",
+    "expected_code": "EMPTY_FILE",
+    "expected_status": "invalid"
+  }
+]
